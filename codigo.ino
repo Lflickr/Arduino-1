@@ -1,9 +1,10 @@
 /* https://github.com/Lflickr */
-
+int aa;
 int conta;
 int bu = 12;
 int bo = A1;
 byte displaySeteSeg[10][7] = {
+  
   
 { 1,1,1,1,1,1,0 },  //DIGITO 0
 { 0,1,1,0,0,0,0 },  //DIGITO 1
