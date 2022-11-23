@@ -1,4 +1,6 @@
-int conta; //
+/* https://github.com/Lflickr */
+
+int conta;
 int bu = 12;
 int bo = A1;
 byte displaySeteSeg[10][7] = {
@@ -18,7 +20,7 @@ byte displaySeteSeg[10][7] = {
   
 void setup(){
 
-  //Definindo pinos como saída
+ 
   pinMode(2, OUTPUT);
   pinMode(3, OUTPUT);
   pinMode(4, OUTPUT);
@@ -30,7 +32,7 @@ void setup(){
   pinMode(10,INPUT);
   pinMode(A1, INPUT);
 
-  //inicializa display com número 0
+ 
   conta = 0;
   ligaSegmentosDisplay(conta);
     
@@ -39,24 +41,24 @@ void setup(){
 void loop() {
   
 
-  if(digitalRead(10)== LOW){ //Se o botão for pressionado soma +1 no display
+  if(digitalRead(10)== LOW){ 
      
     delay(500);
 
     conta++; //incremento
 
-    if(conta == 3){ //Se passar de 9 reseta o display para 0
+    if(conta == 3){ 
       conta = 0;
       ligaSegmentosDisplay(conta);
     }
-    else{ //Se não mostra no display o próximo número
+    else{ 
       ligaSegmentosDisplay(conta);
     }
        
   }
   if (conta == 1 ){
      if(digitalRead(A1)== HIGH){
-      delay(1000); //aguarda 1 segundo para mostrar próximo número
+      delay(1000);
       tone(bu, 528, 250);//nota C
       delay(250);
       tone(bu, 528, 250);//nota C
@@ -122,15 +124,13 @@ void loop() {
    
 }
 
-void ligaSegmentosDisplay(byte digito){ //função para acionar o display com o digito correspondente
+void ligaSegmentosDisplay(byte digito){ 
    
   byte pino = 2;
    
-  //Liga os segmentos de acordo com o digito correspondente
+ 
   for (byte contadorSegmentos = 0; contadorSegmentos < 7; ++contadorSegmentos){
     digitalWrite(pino, displaySeteSeg[digito][contadorSegmentos]);
     ++pino;
   }
 }
-
-tem menu de contexto
